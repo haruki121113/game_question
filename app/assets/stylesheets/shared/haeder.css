@@ -1,0 +1,23 @@
+.main {
+  height: 100vh;
+  width: 100vw;
+}
+
+.header-main {
+  height: 10%;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-size: 30px;
+  padding-left: 20px;
+  text-decoration: none;
+  color: blue;
+}
+
+.login {
+  padding-right: 40px;
+}
