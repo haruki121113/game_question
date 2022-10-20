@@ -1,0 +1,6 @@
+<%= link_to 'Game Question', root_path, class: "logo" %>
+<%= form_with model: @question, local: true do |f| %>
+  <%= f.text_area :title, placeholder:"質問を入力してください" %>
+  <%= f.text_area :content, placeholder:"質問の具体的な内容を入力してください" %>
+  <%= f.submit "投稿する" %>
+<% end %>
