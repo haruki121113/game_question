@@ -2,3 +2,12 @@
 <div class="question-btn">
   <%= link_to '質問を投稿する', new_question_path %>
 </div>
+<% @questions.each do |question| %>
+  <div class="questions">
+    <p class="question-title">質問：<%= question.title %><br></p>
+    <div class="question-main">
+      <p class="question-user">投稿者：<%= question.user.nickname %><br></p>
+      <p class="question-content">質問内容：<%= question.content %></p>
+    </div>
+  </div>
+<% end %>
