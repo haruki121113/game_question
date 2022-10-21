@@ -1,6 +1,11 @@
 <%= link_to 'Game Question', root_path, class: "logo" %>
-<%= form_with model: @question, local: true do |f| %>
-  <%= f.text_area :title, placeholder:"質問を入力してください" %>
-  <%= f.text_area :content, placeholder:"質問の具体的な内容を入力してください" %>
-  <%= f.submit "投稿する" %>
-<% end %>
+<div class="main">
+  <h1 class="haedline">質問投稿フォーム</h1>
+  <div class="question-form">
+    <%= form_with model: @question, local: true do |f| %>
+      <%= f.text_area :title, placeholder:"質問を入力してください", class:"title-form" %>
+      <%= f.text_area :content, placeholder:"質問の具体的な内容を入力してください", rows: "8", class:"content-form" %>
+      <%= f.submit "投稿する", class:"submit-btn" %>
+    <% end %>
+  </div>
+</div>
