@@ -3,11 +3,22 @@
   <%= link_to '質問を投稿する', new_question_path %>
 </div>
 <% @questions.each do |question| %>
-  <div class="questions">
-    <p class="question-title">質問：<%= question.title %><br></p>
-    <div class="question-main">
-      <p class="question-user">投稿者：<%= question.user.nickname %><br></p>
-      <p class="question-content">質問内容：<%= question.content %></p>
+  <%= link_to question_path(question.id), class:"question-link" do %>
+    <div class="questions">
+      <div class="question-title-div">
+        <p class="question-headline">質問：</p>
+        <p class="question-title"><%= question.title %></p>
+      </div>
+      <div class="question-main">
+        <div class="question-contents">
+          <p class="question-headline">投稿者：</p>
+          <p class="question-user"><%= question.user.nickname %></p>
+        </div>
+        <div class="question-contents">
+          <p class="question-headline">質問内容：</p>
+          <p class="question-content"><%= question.content %></p>
+        </div>
+      </div>
     </div>
-  </div>
+  <% end %>
 <% end %>
