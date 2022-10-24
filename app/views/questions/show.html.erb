@@ -21,3 +21,17 @@
     </div>
   </div>
 </div>
+
+<div class="comment-main">
+  <div calss="comment-form">
+    <%= form_with model: [@question, @comment], local: true do |f| %>
+      <%= f.text_area :text, placeholder: "コメントする", rows: "2" %>
+      <%= f.submit "SEND" %>
+    <% end %>
+  </div>
+  <div class="comments">
+    <% @comments.each do |comment| %>
+      <%= comment.user.nickname %>:<%= comment.text%>
+    <% end %>
+  </div>
+</div>
