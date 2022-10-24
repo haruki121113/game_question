@@ -1,20 +1,36 @@
 .btn {
   display: flex;
-}
-
-.edit-btn {
+  width: 15vw;
   margin: 0 0 0 auto;
 }
 
+.edit-btn {
+  width: 32px;
+  display: block;
+  text-decoration: none;
+  color: black;
+  background-color: #ebe9e9;
+  padding: 5px;
+  border: 1px solid;
+  border-radius: 5px;
+}
+
 .destroy-btn {
-  padding-left: 5px;
-  margin-right: 20px;
+  width: 32px;
+  display: block;
+  text-decoration: none;
+  color: black;
+  background-color: #ebe9e9;
+  padding: 5px;
+  border: 1px solid;
+  border-radius: 5px;
+  margin-left: 5px;
 }
 
 
 
 .questions-show {
-  height: 400px;
+  height: auto;
   width: 80vw;
   border: 1px solid;
   border-radius: 5px;
@@ -24,7 +40,7 @@
 .question-title-div-show {
   border-bottom: 1px solid;
   background-color: lightgray;
-  height: 65px;
+  height: auto;
   display: flex;
 }
 
@@ -55,4 +71,24 @@
 
 .question-content-show {
   padding: 10px 10px 10px 0;
+}
+
+.comment-main {
+  height: auto;
+  width: 80vw;
+  margin: 0 auto;
+}
+
+.text-form {
+  display: block;
+  width: 80vw;
+}
+
+.comment-submit-btn {
+  display: block;
+  width: 80vw;
+}
+
+.comment {
+  font-size: 18px;
 }

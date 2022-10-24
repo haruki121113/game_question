@@ -20,3 +20,23 @@
 .login {
   padding-right: 40px;
 }
+
+.nickname-btn {
+  text-decoration: none;
+  color: black;
+}
+
+.logout-btn {
+  text-decoration: none;
+  color: black;
+}
+
+.register-btn {
+  text-decoration: none;
+  color: black;
+}
+
+.login-btn {
+  text-decoration: none;
+  color: black;
+}

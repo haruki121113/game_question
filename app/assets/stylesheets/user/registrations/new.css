@@ -1,0 +1,29 @@
+.signup-main {
+  width: 50vw;
+  margin: 0 auto;
+}
+
+.signup-headline {
+  font-size: 30px;
+}
+
+.input-default {
+  display: block;
+  width: 50vw;
+}
+
+.label {
+  font-size: 20px;
+}
+
+.birthday {
+  margin: 20px 0 20px;
+}
+
+.birthday-label {
+  font-size: 20px;
+}
+
+.input-birth-wrap {
+  display: flex;
+}

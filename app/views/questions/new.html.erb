@@ -1,6 +1,6 @@
 <%= link_to 'Game Question', root_path, class: "logo" %>
-<div class="main">
-  <h1 class="haedline">質問投稿フォーム</h1>
+<div class="question-form-main">
+  <h1 class="question-form-headline">質問投稿フォーム</h1>
   <div class="question-form">
     <%= form_with model: @question, local: true do |f| %>
       <%= render 'shared/error_messages', model: f.object %>

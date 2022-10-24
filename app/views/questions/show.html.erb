@@ -1,8 +1,8 @@
-<%= link_to 'Game Question', root_path, class: "logo" %>
-<% if @question.user_id == current_user.id %>
+<%= render "shared/header" %>
+<% if user_signed_in? && (@question.user_id == current_user.id) %>
   <div class="btn">
-    <div class="edit-btn"><%= link_to "編集", edit_question_path(params[:id]) %></div>
-    <div class="destroy-btn"><%= link_to "削除", question_path(params[:id]), method: :delete %></div>
+    <%= link_to "編集", edit_question_path(params[:id]), class:"edit-btn" %>
+    <%= link_to "削除", question_path(params[:id]), method: :delete, class:"destroy-btn" %>
   </div>
 <% end %>
 <div class="questions-show">
@@ -24,14 +24,18 @@
 
 <div class="comment-main">
   <div calss="comment-form">
+  <% if user_signed_in? %>
     <%= form_with model: [@question, @comment], local: true do |f| %>
-      <%= f.text_area :text, placeholder: "コメントする", rows: "2" %>
-      <%= f.submit "SEND" %>
+      <%= f.text_area :text, placeholder: "コメントする", rows: "2", class:"text-form" %>
+      <%= f.submit "SEND", class:"comment-submit-btn" %>
     <% end %>
+  <% else %>
+    <strong><p>※コメントの投稿には新規登録/ログインが必要です</p></strong>
+  <% end %>
   </div>
   <div class="comments">
     <% @comments.each do |comment| %>
-      <%= comment.user.nickname %>:<%= comment.text%>
+      <p class="comment"><%= comment.user.nickname %>:<%= comment.text%></p>
     <% end %>
   </div>
 </div>

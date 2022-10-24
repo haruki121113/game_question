@@ -1,6 +1,6 @@
 class QuestionsController < ApplicationController
-  before_action :authenticate_user!, only: [:new]
-
+  before_action :authenticate_user!, only: [:new, :edit, :destroy]
+  before_action :move_to_index, except: [:index, :new, :create, :show]
   def index
     @questions = Question.all.order(id: "DESC")
   end
@@ -10,7 +10,6 @@ class QuestionsController < ApplicationController
   end
 
   def create
-    binding.pry
     @question = Question.new(question_params)
     if @question.save
       redirect_to root_path
@@ -45,6 +44,13 @@ class QuestionsController < ApplicationController
   private
   def question_params
     params.require(:question).permit(:title, :content).merge(user_id: current_user.id)
+  end
+
+  def move_to_index
+    @question = Question.find(params[:id])
+    if current_user.id != @question.user.id
+      redirect_to action: :index
+    end
   end
 
 end

@@ -1,5 +1,17 @@
+.question-form-btn {
+  display: block;
+  width: 112px;
+  padding: 5px;
+  text-decoration: none;
+  color: black;
+  border: 1px solid;
+  border-radius: 5px;
+  background-color: #ebe9e9;
+  margin: 0 30px 0 auto;
+}
+
 .questions {
-  height: 250px;
+  height: auto;
   width: 80vw;
   border: 1px solid;
   border-radius: 5px;
@@ -9,7 +21,7 @@
 .question-title-div {
   border-bottom: 1px solid;
   background-color: lightgray;
-  height: 65px;
+  height: auto;
   display: flex;
 }
 
@@ -23,7 +35,7 @@
 }
 
 .question-main {
-  height: 65%;
+  height: auto;
   width: 95%;
   border: 1px solid;
   border-radius: 5px;
@@ -39,7 +51,12 @@
 }
 
 .question-content {
-  padding: 10px 10px 10px 0;
+  padding: 10px 10px 0 0;
+  display: -webkit-box;
+  overflow: hidden;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  margin-bottom: 10px;
 }
 
 .question-link {

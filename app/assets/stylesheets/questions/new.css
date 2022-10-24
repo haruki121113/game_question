@@ -1,7 +1,10 @@
-.main {
+.question-form-main {
+  margin: 0 auto;
+  width: 80vw;
 }
 
-.headline {
+.question-form-headline {
+  font-size: 30px;
 }
 
 .question-form {
@@ -22,6 +25,6 @@
 
 .submit-btn {
   display: block;
-  width: 20;
-  margin-top: 10px;
+  width: 40vw;
+  margin: 10px auto;
 }
