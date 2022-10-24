@@ -1,0 +1,37 @@
+<%= link_to 'Game Question', root_path, class: "logo" %>
+<% if @question.user_id == current_user.id %>
+  <div class="btn">
+    <div class="edit-btn"><%= link_to "編集", "#" %></div>
+    <div class="destroy-btn"><%= link_to "削除", "#" %></div>
+  </div>
+<% end %>
+<div class="questions-show">
+  <div class="question-title-div-show">
+    <p class="question-headline-show">質問：</p>
+    <p class="question-title-show"><%= @question.title %></p>
+  </div>
+  <div class="question-main-show">
+    <div class="question-contents-show">
+      <p class="question-headline-show">投稿者：</p>
+      <p class="question-user-show"><%= @question.user.nickname %></p>
+    </div>
+    <div class="question-contents-show">
+      <p class="question-headline-show">質問内容：</p>
+      <p class="question-content-show"><%= @question.content %></p>
+    </div>
+  </div>
+</div>
+
+<div class="comment-main">
+  <div calss="comment-form">
+    <%= form_with model: [@question, @comment], local: true do |f| %>
+      <%= f.text_area :text, placeholder: "コメントする", rows: "2" %>
+      <%= f.submit "SEND" %>
+    <% end %>
+  </div>
+  <div class="comments">
+    <% @comments.each do |comment| %>
+      <%= comment.user.nickname %>:<%= comment.text%>
+    <% end %>
+  </div>
+</div>
