@@ -1,8 +1,8 @@
 <%= link_to 'Game Question', root_path, class: "logo" %>
 <% if @question.user_id == current_user.id %>
   <div class="btn">
-    <div class="edit-btn"><%= link_to "編集", "#" %></div>
-    <div class="destroy-btn"><%= link_to "削除", "#" %></div>
+    <div class="edit-btn"><%= link_to "編集", edit_question_path(params[:id]) %></div>
+    <div class="destroy-btn"><%= link_to "削除", question_path(params[:id]), method: :delete %></div>
   </div>
 <% end %>
 <div class="questions-show">
