@@ -3,7 +3,7 @@
     <%= link_to 'Game Question', root_path, class: "logo" %>
     <div class=login>
       <% if user_signed_in? %>
-        <%= link_to current_user.nickname, '#' ,class:"nickname-btn" %>
+        <%= link_to current_user.nickname, user_path(current_user.id) ,class:"nickname-btn" %>
         <%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class:"logout-btn" %>
       <% else %>
         <%= link_to '新規登録', new_user_registration_path, class:"register-btn" %>
