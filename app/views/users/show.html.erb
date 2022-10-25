@@ -1,7 +1,5 @@
 <%= render "shared/header" %>
-<div class="question-btn">
-  <%= link_to '質問を投稿する', new_question_path, class:"question-form-btn" %>
-</div>
+<h1 class="question-nickname"><%= @nickname %>さんの投稿</h1>
 <% @questions.each do |question| %>
   <%= link_to question_path(question.id), class:"question-link" do %>
     <div class="questions">
@@ -9,15 +7,11 @@
         <p class="question-headline">質問：</p>
         <p class="question-title"><%= question.title %></p>
       </div>
-  <% end %>
       <div class="question-main">
-  <%= link_to user_path(question.user.id), class:"nickname-btn" do %>
         <div class="question-contents">
           <p class="question-headline">投稿者：</p>
           <p class="question-user"><%= question.user.nickname %></p>
         </div>
-  <% end %>
-  <%= link_to question_path(question.id), class:"question-link" do %>
         <div class="question-contents">
           <p class="question-headline">質問内容：</p>
           <p class="question-content"><%= question.content %></p>
