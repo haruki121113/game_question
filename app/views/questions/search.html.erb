@@ -1,0 +1,28 @@
+<%= render "shared/header" %>
+<h1 class="search-headline">検索結果</h1>
+<div class="contents row">
+  <% @questions.each do |question| %>
+    <%= link_to question_path(question.id), class:"question-link" do %>
+      <div class="questions">
+        <div class="question-title-div">
+          <p class="question-headline">質問：</p>
+          <p class="question-title"><%= question.title %></p>
+        </div>
+    <% end %>
+        <div class="question-main">
+    <%= link_to user_path(question.user.id), class:"nickname-btn" do %>
+          <div class="question-contents">
+            <p class="question-headline">投稿者：</p>
+            <p class="question-user"><%= question.user.nickname %></p>
+          </div>
+    <% end %>
+    <%= link_to question_path(question.id), class:"question-link" do %>
+          <div class="question-contents">
+            <p class="question-headline">質問内容：</p>
+            <p class="question-content"><%= question.content %></p>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  <% end %>
+</div>

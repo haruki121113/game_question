@@ -1,3 +1,20 @@
+.upper-contents {
+  display: flex;
+  justify-content: space-between;
+}
+
+.search-form {
+  margin: 3px 0 0 50px;
+}
+
+.search-input {
+  width: 40vw;
+}
+
+.search-btn {
+  width: 70px;
+}
+
 .question-form-btn {
   display: block;
   width: 112px;
@@ -7,7 +24,7 @@
   border: 1px solid;
   border-radius: 5px;
   background-color: #ebe9e9;
-  margin: 0 30px 0 auto;
+  margin-right: 30px;
 }
 
 .questions {

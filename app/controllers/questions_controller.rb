@@ -1,6 +1,6 @@
 class QuestionsController < ApplicationController
   before_action :authenticate_user!, only: [:new, :edit, :destroy]
-  before_action :move_to_index, except: [:index, :new, :create, :show]
+  before_action :move_to_index, except: [:index, :new, :create, :show, :search]
   def index
     @questions = Question.all.order(id: "DESC")
   end
@@ -41,6 +41,11 @@ class QuestionsController < ApplicationController
       redirect_to root_path
     end
   end
+
+  def search
+    @questions = Question.search(params[:keyword])
+  end
+
   private
   def question_params
     params.require(:question).permit(:title, :content).merge(user_id: current_user.id)
