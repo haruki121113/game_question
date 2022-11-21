@@ -5,6 +5,7 @@
     <%= form_with model: @question, local: true do |f| %>
       <%= render 'shared/error_messages', model: f.object %>
       <%= f.text_area :title, placeholder:"質問を入力してください(60字まで)", class:"title-form", maxlength:"60" %>
+      <%= f.collection_select(:genre_id, Genre.all, :id, :name, {}, {class:"genre-select"}) %>
       <%= f.text_area :content, placeholder:"質問の具体的な内容を入力してください", rows: "8", class:"content-form" %>
       <%= f.submit "投稿する", class:"submit-btn" %>
     <% end %>

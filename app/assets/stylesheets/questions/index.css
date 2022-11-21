@@ -40,6 +40,7 @@
   background-color: lightgray;
   height: auto;
   display: flex;
+  justify-content: space-between;
 }
 
 .question-headline {
@@ -47,8 +48,12 @@
   padding: 10px 0 0 10px;
 }
 
+.question-genre {
+  padding: 10px 10px 0 10px;
+}
+
 .question-title {
-  padding: 10px 10px 10px 0;
+  padding: 10px 0 10px 10px;
 }
 
 .question-main {

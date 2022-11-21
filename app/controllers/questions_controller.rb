@@ -48,7 +48,7 @@ class QuestionsController < ApplicationController
 
   private
   def question_params
-    params.require(:question).permit(:title, :content).merge(user_id: current_user.id)
+    params.require(:question).permit(:title, :content, :genre_id).merge(user_id: current_user.id)
   end
 
   def move_to_index
